@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('filmovi', function (Blueprint $table) {
             $table->id();
             $table->string('naziv',20);
+            $table->string('zanr');
             $table->integer('brojSale');
             $table->string('nacinPrevodjenja');
             $table->timestamps();

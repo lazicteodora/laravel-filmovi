@@ -8,6 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Film extends Model
 {
     use HasFactory;
+    protected $table = 'filmovi';
+
+    protected $fillable = [
+
+        'naziv',
+        'zanr',
+        'brojSale',
+        'nacinPrevodjenja',
+    ];
 
     public function rezervacije()
     {

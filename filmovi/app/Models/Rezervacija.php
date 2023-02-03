@@ -9,6 +9,16 @@ class Rezervacija extends Model
 {
     use HasFactory;
 
+    protected $table = 'rezervacije';
+
+    protected $fillable = [
+        'iznos',
+        'sediste',
+        'nacinPlacanja',
+        'gledalac_id',
+        'film_id',
+    ];
+
     public function film()
     {
         return $this->belongsTo(Film::class);
