@@ -15,12 +15,12 @@ class GledalacController extends Controller
         return GledalacResource::collection($gledaoci);
     }
 
-    public function show( $gledalac)
+    public function show(Gledalac $gledalac)
     {
         return new GledalacResource($gledalac);
     }
 
-    public function update(Request $request,  $gledalac)
+    public function update(Request $request,  Gledalac $gledalac)
     {
         $validator = Validator::make($request->all(), [
             'imePrezime' => 'required',
@@ -41,7 +41,7 @@ class GledalacController extends Controller
         return response()->json(['Uspešno izmenjen gledalac!', new GledalacResource($gledalac)]);
     }
 
-    public function destroy( $gledalac)
+    public function destroy(Gledalac $gledalac)
     {
         $gledalac->delete();
         return response()->json('Uspešno obrisan gledalac!');
