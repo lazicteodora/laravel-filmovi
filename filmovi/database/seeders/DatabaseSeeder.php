@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\RezervacijaSeeder;
+use Database\Seeders\GledalacSeeder;
+use Database\Seeders\FilmSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +17,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $FilmSeeder = new FilmSeeder;
+        $FilmSeeder->run();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $GledalacSeeder = new GledalacSeeder;
+        $GledalacSeeder->run();
+
+        $RezervacijaSeeder = new RezervacijaSeeder;
+        $RezervacijaSeeder->run();
     }
 }
